@@ -47,6 +47,7 @@
 
   /* ---- Gradients ---- */
   --g-hero:
+    linear-gradient(90deg, rgb(6 18 13 / 0.78) 0%, rgb(6 18 13 / 0.45) 45%, transparent 75%),
     linear-gradient(180deg, rgb(6 18 13 / 0.7) 0%, rgb(6 18 13 / 0.3) 35%, rgb(6 18 13 / 0.6) 70%, rgb(6 18 13 / 0.92) 100%),
     radial-gradient(120% 80% at 10% 60%, rgb(31 138 91 / 0.4), transparent 60%);
   --g-glow: radial-gradient(70% 50% at 50% 0%, light-dark(rgb(31 138 91 / 0.1), rgb(31 138 91 / 0.2)), transparent 70%);
