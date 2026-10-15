@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Necopolymer design tokens: THE place to restyle the site.
+   Every colour, font, size, radius and duration lives here. Other CSS files
+   hold no colour literals (enforced by scripts/check.py).
+   Scheme-dependent colours are declared once as light-dark(LIGHT, DARK).
+   ========================================================================== */
+:root {
+  color-scheme: light dark;
+
+  /* ---- Palette: page ---- */
+  --c-bg:            light-dark(#F3F7F4, #0A1A13);
+  --c-bg-alt:        light-dark(#E8F0EB, #0D2119);
+  --c-surface:       light-dark(#FFFFFF, #12281E);
+  --c-border:        light-dark(#D3E3D9, #23443A);
+  --c-text:          light-dark(#0F2419, #EAF4EE);
+  --c-text-muted:    light-dark(#4B6458, #A3BCAF);
+  --c-primary:       light-dark(#18744C, #1F8A5B);
+  --c-primary-hover: light-dark(#125E3D, #27A56D);
+  --c-on-primary:    #FFFFFF;
+  --c-accent:        light-dark(#4F7D0E, #B5E655);
+  --c-accent-2:      light-dark(#167C95, #5CC8E0);
+  --c-on-accent:     #0A1A13;
+  --c-cta-bg:        light-dark(#18744C, #15603F);
+  --c-focus:         light-dark(#167C95, #5CC8E0);
+  --c-shadow:        light-dark(rgb(15 36 25 / 0.16), rgb(0 0 0 / 0.5));
+  --c-grad-1:        light-dark(#18744C, #B5E655);
+  --c-grad-2:        light-dark(#167C95, #5CC8E0);
+  --c-header:        light-dark(rgb(243 247 244 / 0.72), rgb(10 26 19 / 0.6));
+  --c-header-solid:  light-dark(rgb(243 247 244 / 0.96), rgb(10 26 19 / 0.94));
+
+  /* ---- Palette: always-dark surfaces (hero, film strip, lightbox, footer) ---- */
+  --c-hero-text:        #F2FAF5;
+  --c-hero-muted:       #C5DBCF;
+  --c-hero-grad-1:      #B5E655;
+  --c-hero-grad-2:      #5CC8E0;
+  --c-hero-chip:        rgb(255 255 255 / 0.08);
+  --c-hero-chip-border: rgb(255 255 255 / 0.24);
+  --c-film:             #0C110E;
+  --c-film-hole:        #EDE6D3;
+  --c-film-text:        #D9E6DE;
+  --c-scrim:            rgb(4 10 7 / 0.9);
+
+  /* ---- Messenger brand colours ---- */
+  --c-whatsapp: #25D366;
+  --c-viber:    #7360F2;
+  --c-telegram: #26A5E4;
+
+  /* ---- Gradients ---- */
+  --g-hero:
+    linear-gradient(180deg, rgb(6 18 13 / 0.7) 0%, rgb(6 18 13 / 0.3) 35%, rgb(6 18 13 / 0.6) 70%, rgb(6 18 13 / 0.92) 100%),
+    radial-gradient(120% 80% at 10% 60%, rgb(31 138 91 / 0.4), transparent 60%);
+  --g-glow: radial-gradient(70% 50% at 50% 0%, light-dark(rgb(31 138 91 / 0.1), rgb(31 138 91 / 0.2)), transparent 70%);
+
+  /* ---- Typography ---- */
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-body:    "Inter", ui-sans-serif, system-ui, sans-serif;
+  --fs-hero:    clamp(2.75rem, 1.2rem + 6.5vw, 6.75rem);
+  --fs-h2:      clamp(2rem, 1.2rem + 3vw, 3.5rem);
+  --fs-h3:      clamp(1.2rem, 1.05rem + 0.5vw, 1.45rem);
+  --fs-lead:    clamp(1.08rem, 1rem + 0.4vw, 1.3rem);
+  --fs-body:    1.0625rem;
+  --fs-small:   0.9rem;
+  --fs-eyebrow: 0.78rem;
+  --fs-brand:   1.1rem;
+  --lh-tight:   1.04;
+  --lh-heading: 1.15;
+  --lh-body:    1.65;
+  --tracking-tight:   -0.03em;
+  --tracking-eyebrow: 0.18em;
+  --tracking-brand:   0.12em;
+
+  /* ---- Space & layout ---- */
+  --sp-1: 0.25rem; --sp-2: 0.5rem; --sp-3: 0.75rem; --sp-4: 1rem;
+  --sp-5: 1.5rem;  --sp-6: 2rem;   --sp-7: 3rem;    --sp-8: 4.5rem;
+  --section-pad: clamp(4.5rem, 3rem + 7vw, 9rem);
+  --container: 1200px;
+  --container-narrow: 760px;
+  --gutter: clamp(1rem, 0.5rem + 3vw, 2rem);
+  --header-h: 76px;
+  --header-h-scrolled: 62px;
+  --line: 2px;
+  --border-w: 1px;
+
+  /* ---- Shape & depth ---- */
+  --radius-sm: 10px;
+  --radius: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  --shadow-card: 0 24px 60px -28px var(--c-shadow);
+  --blur: 16px;
+
+  /* ---- Icons & controls ---- */
+  --icon-sm: 1.1rem;
+  --icon: 1.35rem;
+  --icon-lg: 1.75rem;
+  --control: 42px;
+  --badge: 64px;
+
+  /* ---- Motion ---- */
+  --dur-fast: 180ms;
+  --dur: 420ms;
+  --dur-slow: 900ms;
+  --dur-kenburns: 26s;
+  --dur-ring: 12s;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --reveal-shift: 28px;
+  --reveal-stagger: 90ms;
+
+  /* ---- Film strip ---- */
+  --film-frame-h: clamp(220px, 40vw, 420px);
+  --film-edge: 30px;
+  --film-hole-h: 10px;
+  --film-hole-w: 16px;
+  --film-gap: 14px;
+}
+
+/* Explicit choice from the theme toggle (saved in localStorage as "neco-theme"). */
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"]  { color-scheme: dark; }

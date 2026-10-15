@@ -1,0 +1,100 @@
+/* Base: fonts, reset, layout primitives, typography, buttons, reveal. Values come from tokens.css. */
+@font-face {
+  font-family: "Sora";
+  src: url("../fonts/sora-latin-wght.woff2") format("woff2");
+  font-weight: 100 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-latin-wght.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-h-scrolled); -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; }
+img { height: auto; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+ul { list-style: none; padding: 0; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: var(--lh-heading); letter-spacing: var(--tracking-tight); }
+:focus-visible { outline: var(--line) solid var(--c-focus); outline-offset: 3px; border-radius: var(--radius-sm); }
+::selection { background: var(--c-primary); color: var(--c-on-primary); }
+
+.skip-link {
+  position: absolute; left: var(--sp-4); top: calc(-1 * var(--header-h)); z-index: 100;
+  padding: var(--sp-2) var(--sp-4); border-radius: var(--radius-sm);
+  background: var(--c-primary); color: var(--c-on-primary);
+}
+.skip-link:focus { top: var(--sp-4); }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ---- Layout ---- */
+.container { width: min(100% - 2 * var(--gutter), var(--container)); margin-inline: auto; }
+.section { position: relative; padding-block: var(--section-pad); }
+.section--alt { background-color: var(--c-bg-alt); }
+.section__head { max-width: var(--container-narrow); margin-bottom: var(--sp-7); }
+.section__title { font-size: var(--fs-h2); }
+.section__lead { margin-top: var(--sp-4); font-size: var(--fs-lead); color: var(--c-text-muted); }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: var(--sp-2); margin-bottom: var(--sp-4);
+  font-size: var(--fs-eyebrow); font-weight: 600; letter-spacing: var(--tracking-eyebrow); text-transform: uppercase;
+  color: var(--c-accent);
+}
+.eyebrow::before { content: ""; width: var(--sp-6); height: var(--line); background: currentColor; }
+.text-gradient {
+  background-image: linear-gradient(90deg, var(--c-grad-1), var(--c-grad-2));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* ---- Icons ---- */
+.icon { width: var(--icon); height: var(--icon); flex: none; }
+.icon--sm { width: var(--icon-sm); height: var(--icon-sm); }
+.icon--lg { width: var(--icon-lg); height: var(--icon-lg); }
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-5); border: var(--border-w) solid transparent; border-radius: var(--radius-pill);
+  font-weight: 600;
+  transition: transform var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+.btn:hover { transform: translateY(-2px); }
+.btn--primary { background: var(--c-primary); color: var(--c-on-primary); }
+.btn--primary:hover { background: var(--c-primary-hover); }
+.btn--accent { background: var(--c-accent); color: var(--c-on-accent); }
+.btn--ghost { border-color: var(--c-border); color: var(--c-text); }
+.btn--ghost:hover { border-color: var(--c-accent); color: var(--c-accent); }
+
+/* ---- Reveal on scroll: hidden only while html.js is set, so no-JS visitors see everything ---- */
+.js [data-reveal] {
+  opacity: 0; transform: translateY(var(--reveal-shift));
+  transition: opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease);
+  transition-delay: calc(var(--d, 0) * var(--reveal-stagger));
+}
+.js [data-reveal].is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important; transition-delay: 0s !important;
+  }
+  .js [data-reveal] { opacity: 1; transform: none; }
+}
