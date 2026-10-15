@@ -13,7 +13,7 @@ copy and sections will be refined later.
 | Decision | Choice | Why |
 |---|---|---|
 | Stack | Hand-written HTML/CSS/JS, no build, no npm, no Actions | Mirrors the proven `zenith-landing-page` pattern; nothing to rot |
-| Configurability | All design values in `assets/css/tokens.css` (`light-dark()` tokens) | One file to restyle; `base.css`/`components.css` hold no raw values |
+| Configurability | All design values in `assets/css/tokens.css` (`light-dark()` tokens) | One file to restyle; `base.css`, `components.css`, JS and HTML hold no colour literals (checked by `scripts/check.py`); tunable sizes and durations are tokens too |
 | Content | Written in `index.html`, not JS-rendered | Indexable by search engines |
 | Language | English only at launch | `/hy/` and `/ru/` pages may be added later; fonts chosen to allow it |
 | Direction | "Cinematic Evergreen", dark-first, with a light scheme | Chosen by the owner |
@@ -87,7 +87,10 @@ README.md CLAUDE.md .gitignore docs/superpowers/{specs,plans}/
 
 ## Domain
 
-`CNAME` contains `necopolymer.com`. GoDaddy DNS: four apex A records
+`CNAME` contains `necopolymer.com`. It is committed only after the GoDaddy records exist:
+adding it earlier makes Pages redirect the preview URL to a domain that does not resolve yet.
+All asset paths are relative so the site works both under the preview sub-path and at the
+domain root. GoDaddy DNS: four apex A records
 (185.199.108.153, .109, .110, .111), `www` CNAME → `zenithdevops.github.io`; remove the
 parked `@` record and forwarding. Optional org-level domain verification TXT record. Enforce
 HTTPS once the certificate is issued.
