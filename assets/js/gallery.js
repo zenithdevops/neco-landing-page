@@ -43,7 +43,8 @@
   track.addEventListener('click', (event) => {
     const opener = event.target.closest('.film__open');
     if (!opener) return;
-    if (dragged) { dragged = false; return; }
+    if (dragged) { dragged = false; event.preventDefault(); return; }
+    if (opener.matches('a')) return; // Video frames are plain links to their source.
     const img = opener.querySelector('img');
     dialogImg.src = opener.dataset.full || img.currentSrc || img.src;
     dialogImg.alt = img.alt;

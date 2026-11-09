@@ -207,6 +207,19 @@
   transition: transform var(--dur-slow) var(--ease), filter var(--dur) var(--ease);
 }
 .film__frame:hover img, .film__open:focus-visible img { transform: scale(1.04); filter: none; }
+.film__open--video { position: relative; color: var(--c-film-text); }
+.film__play {
+  position: absolute; inset: 0; margin: auto; display: grid; place-items: center;
+  width: clamp(52px, 10vw, 76px); aspect-ratio: 1; border-radius: var(--radius-pill);
+  background: var(--c-scrim); border: 1px solid var(--c-hero-chip-border); pointer-events: none;
+  transition: transform var(--dur) var(--ease), color var(--dur-fast) var(--ease);
+}
+.film__open--video:hover .film__play, .film__open--video:focus-visible .film__play { transform: scale(1.1); color: var(--c-hero-grad-1); }
+.film__source {
+  position: absolute; top: var(--sp-3); left: 50%; translate: -50% 0; display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: var(--sp-1) var(--sp-3); border-radius: var(--radius-pill); background: var(--c-scrim);
+  font-size: var(--fs-small); pointer-events: none;
+}
 .film__frame figcaption {
   position: absolute; inset: auto 0 0 0; padding: var(--sp-6) var(--sp-4) var(--sp-3);
   background: linear-gradient(transparent, var(--c-scrim)); font-size: var(--fs-small); pointer-events: none;

@@ -11,8 +11,8 @@ from pathlib import Path
 LUCIDE = "https://cdn.jsdelivr.net/npm/lucide-static@1.57.0/icons/{}.svg"
 SIMPLE = "https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/{}.svg"
 UI = ["sun", "moon", "menu", "x", "arrow-right", "arrow-left", "chevron-down", "phone", "mail",
-      "map-pin", "external-link", "briefcase", "recycle", "clock"]
-BRANDS = ["whatsapp", "viber", "telegram"]
+      "map-pin", "external-link", "briefcase", "recycle", "clock", "play"]
+BRANDS = ["whatsapp", "viber", "telegram", "youtube", "instagram"]
 # The Necopolymer mark: a closing loop (recycling) around a leaf.
 MARK = (
     '<symbol id="mark" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" '

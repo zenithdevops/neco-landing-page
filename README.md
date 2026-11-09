@@ -47,6 +47,10 @@ magick photo.jpg -resize 900x600^ -gravity center -extent 900x600 /tmp/p.png && 
 **Gallery frames.** Add a WebP to `assets/img/gallery/` (about 1600 px wide) and copy one
 `<figure class="film__frame">` block in `index.html`.
 
+**Gallery videos.** Videos stay on YouTube or Instagram and nothing from those sites loads until a
+visitor clicks. Save the preview image as a WebP in `assets/img/gallery/` and copy one
+`film__open--video` block in `index.html`, changing its link, image, labels and caption.
+
 **Icons.** Add the name to `UI` or `BRANDS` in `tools/build-icons.py`, run it, then use
 `<svg class="icon"><use href="assets/brand/icons.svg#NAME"></use></svg>`.
 
@@ -72,5 +76,6 @@ magick photo.jpg -resize 900x600^ -gravity center -extent 900x600 /tmp/p.png && 
   "Recycling sorting", "Plastic bottle caps"); PET placeholder
   ["Recyclable finnish plastic bottles with deposit"](https://commons.wikimedia.org/wiki/File:Recyclable_finnish_plastic_bottles_with_deposit.jpg), Wikimedia Commons.
 - Portrait and gallery photos © Necopolymer LLC.
+- Video preview images belong to the videos' publishers: Ministry of Environment of Armenia, EcoLur and Hayern Aysor.
 
 Maintained by Vrej Abramian.
