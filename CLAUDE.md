@@ -25,7 +25,7 @@ bundler, preprocessor or CI build. The site must keep deploying for years untouc
 ## Copy rules
 
 - Formal, plain English. Short sentences. No invented numbers, certifications or clients.
-- Contact data must match exactly: `+37498886456` (shown `+374 98 886456`), `varodjana@gmail.com`,
+- Contact data must match exactly: `+37498339349` (shown `+374 98 339349`), `varodjana@gmail.com`,
   "Hangar No. 2, 22nd Street, Ptghni, Kotayk Province, Armenia".
 - Footer keeps "Maintained by Vrej Abramian".
 

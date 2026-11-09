@@ -35,7 +35,7 @@ python3 scripts/check.py      # static checks; run before every push
 
 **Contact details** appear in three places in `index.html`: the *Contacts* section, the
 footer, and the JSON-LD block in `<head>`. Phone also appears in the Careers call-to-action
-and the meta description. Search for `37498886456` and `varodjana@gmail.com`.
+and the meta description. Search for `37498339349` and `varodjana@gmail.com`.
 
 **Product photos.** Replace `assets/img/products/pet.webp`, `hdpe.webp` or `pp.webp` with a
 900×600 WebP (keep the file name), and update that image's `alt` text in `index.html`:

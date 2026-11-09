@@ -37,10 +37,10 @@ for path in scanned:
 index = ROOT / "index.html"
 html = index.read_text() if index.exists() else ""
 REQUIRED = [
-    'href="tel:+37498886456"',
-    'href="https://wa.me/37498886456"',
-    'href="viber://chat?number=%2B37498886456"',
-    'href="https://t.me/+37498886456"',
+    'href="tel:+37498339349"',
+    'href="https://wa.me/37498339349"',
+    'href="viber://chat?number=%2B37498339349"',
+    'href="https://t.me/+37498339349"',
     'href="mailto:varodjana@gmail.com"',
     'href="https://maps.app.goo.gl/LxYBtuq4fgTTaktv6"',
     "I am Varodjan Abramian, founder and CEO of Necopolymer LLC.",
